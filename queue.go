@@ -10,10 +10,13 @@ func (q *Queue[T]) Enqueue(v T) {
 	*q = append(*q, v)
 }
 
-func (q *Queue[T]) Dequeue() T {
+func (q *Queue[T]) Dequeue() (T, bool) {
+	if q.Empty() {
+		return *new(T), false
+	}
 	e := (*q)[0]
 	*q = (*q)[1:]
-	return e
+	return e, true
 }
 
 func (q *Queue[T]) Empty() bool {
