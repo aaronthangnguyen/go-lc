@@ -1,7 +1,7 @@
 package queue_test
 
 import (
-	"github.com/aaronthangnguyen/go-lc"
+	"github.com/aaronthangnguyen/go-lc/queue"
 	"testing"
 )
 
